@@ -11,11 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{34F558AF-FB74-4ED3-83F5-1C930FFBA9CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioGrantoSeguros.Application", "DesafioGrantoSeguros.Application\DesafioGrantoSeguros.Application.csproj", "{C605CE8A-2EDC-4EED-A132-BDF93A66FDFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioGrantoSeguros.Application", "DesafioGrantoSeguros.Application\DesafioGrantoSeguros.Application.csproj", "{C605CE8A-2EDC-4EED-A132-BDF93A66FDFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioGrantoSeguros.Domain", "DesafioGrantoSeguros.Domain\DesafioGrantoSeguros.Domain.csproj", "{5D5F355C-CAF6-467F-A169-70F540A58DD9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioGrantoSeguros.Domain", "DesafioGrantoSeguros.Domain\DesafioGrantoSeguros.Domain.csproj", "{5D5F355C-CAF6-467F-A169-70F540A58DD9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioGrantoSeguros.Infrastructure.DataAccess", "DesafioGrantoSeguros.Infrastructure.DataAccess\DesafioGrantoSeguros.Infrastructure.DataAccess.csproj", "{F3F17BF9-2E90-44EF-AEA9-46203C04FAE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioGrantoSeguros.Infrastructure.DataAccess", "DesafioGrantoSeguros.Infrastructure.DataAccess\DesafioGrantoSeguros.Infrastructure.DataAccess.csproj", "{F3F17BF9-2E90-44EF-AEA9-46203C04FAE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
