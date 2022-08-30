@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{ED16A0FF-6BBA-48D4-B5D1-8FCD7958D105}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{DA7530F2-E5FE-4625-B230-C8ABECE39EC0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{856292B8-A5B1-40DF-BE7E-23B74778B7FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{34F558AF-FB74-4ED3-83F5-1C930FFBA9CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioGrantoSeguros.Application", "DesafioGrantoSeguros.Application\DesafioGrantoSeguros.Application.csproj", "{C605CE8A-2EDC-4EED-A132-BDF93A66FDFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioGrantoSeguros.Domain", "DesafioGrantoSeguros.Domain\DesafioGrantoSeguros.Domain.csproj", "{5D5F355C-CAF6-467F-A169-70F540A58DD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioGrantoSeguros.Infrastructure.DataAccess", "DesafioGrantoSeguros.Infrastructure.DataAccess\DesafioGrantoSeguros.Infrastructure.DataAccess.csproj", "{F3F17BF9-2E90-44EF-AEA9-46203C04FAE5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C605CE8A-2EDC-4EED-A132-BDF93A66FDFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C605CE8A-2EDC-4EED-A132-BDF93A66FDFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C605CE8A-2EDC-4EED-A132-BDF93A66FDFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C605CE8A-2EDC-4EED-A132-BDF93A66FDFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D5F355C-CAF6-467F-A169-70F540A58DD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D5F355C-CAF6-467F-A169-70F540A58DD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D5F355C-CAF6-467F-A169-70F540A58DD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D5F355C-CAF6-467F-A169-70F540A58DD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3F17BF9-2E90-44EF-AEA9-46203C04FAE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3F17BF9-2E90-44EF-AEA9-46203C04FAE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3F17BF9-2E90-44EF-AEA9-46203C04FAE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3F17BF9-2E90-44EF-AEA9-46203C04FAE5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C605CE8A-2EDC-4EED-A132-BDF93A66FDFB} = {ED16A0FF-6BBA-48D4-B5D1-8FCD7958D105}
+		{5D5F355C-CAF6-467F-A169-70F540A58DD9} = {DA7530F2-E5FE-4625-B230-C8ABECE39EC0}
+		{F3F17BF9-2E90-44EF-AEA9-46203C04FAE5} = {856292B8-A5B1-40DF-BE7E-23B74778B7FD}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D30116A9-E9B5-436E-AFE7-ECA561A95246}
+	EndGlobalSection
+EndGlobal
