@@ -1,18 +1,15 @@
+using DesafioGrantoSeguros.Domain.Interfaces.Repositories;
+using DesafioGrantoSeguros.Domain.Interfaces.Services;
+using DesafioGrantoSeguros.Domain.Services;
 using DesafioGrantoSeguros.Infrastructure.DataAccess.Context;
+using DesafioGrantoSeguros.Infrastructure.DataAccess.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace DesafioGrantoSeguros.Application
 {
@@ -32,6 +29,9 @@ namespace DesafioGrantoSeguros.Application
             services.AddControllers();
 
             services.AddDbContext<DesafioContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
+
+            services.AddScoped<IVendedorRepository, VendedorRepository>();
+            services.AddScoped<IVendedorService, VendedorService>();
 
             services.AddSwaggerGen(c =>
             {

@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DesafioGrantoSeguros.Domain.Entities;
+using DesafioGrantoSeguros.Domain.Interfaces.Services;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -9,18 +12,25 @@ namespace DesafioGrantoSeguros.Application.Controllers
     [ApiController]
     public class VendedorController : ControllerBase
     {
+        private readonly IVendedorService _vendedorService;
+
+        public VendedorController(IVendedorService vendedorService)
+        {
+            _vendedorService = vendedorService;
+        }
+
         // GET: api/<VendedorController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IActionResult> Get()
         {
-            return new string[] { "value1", "value2" };
+            return Ok(await _vendedorService.GetVendedoresAsync());
         }
 
         // GET api/<VendedorController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
-            return "value";
+            return Ok(await _vendedorService.GetVendedorAsync(id));
         }
 
         // POST api/<VendedorController>

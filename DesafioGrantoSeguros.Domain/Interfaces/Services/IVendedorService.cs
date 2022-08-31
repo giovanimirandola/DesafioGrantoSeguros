@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesafioGrantoSeguros.Domain.Interfaces.Repositories
+namespace DesafioGrantoSeguros.Domain.Interfaces.Services
 {
-    public interface IVendedorRepository
+    public interface IVendedorService
     {
         Task<Vendedor> GetVendedorAsync(int id);
         Task<IEnumerable<Vendedor>> GetVendedoresAsync();
