@@ -1,3 +1,4 @@
+using DesafioGrantoSeguros.Application.Configuration;
 using DesafioGrantoSeguros.Domain.Interfaces.Repositories;
 using DesafioGrantoSeguros.Domain.Interfaces.Services;
 using DesafioGrantoSeguros.Domain.Services;
@@ -30,19 +31,9 @@ namespace DesafioGrantoSeguros.Application
 
             services.AddDbContext<DesafioContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
 
-            services.AddScoped<IVendedorRepository, VendedorRepository>();
-            services.AddScoped<IVendedorService, VendedorService>();
-            services.AddScoped<IOportunidadeRepository, OportunidadeRepository>();
-            services.AddScoped<IOportunidadeService, OportunidadeService>();
+            services.AddDependecyInjectionConfiguration();
 
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo
-                {
-                    Title = "Desafio Granto Seguros",
-                    Version = "v1"
-                });
-            });
+            services.AddSwaggerConfiguration();
 
         }
 
@@ -54,13 +45,7 @@ namespace DesafioGrantoSeguros.Application
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseSwagger();
-            app.UseSwaggerUI(c =>
-            {
-                c.RoutePrefix = string.Empty;
-                c.SwaggerEndpoint("./swagger/v1/swagger.json", "Desafio V1");
-
-            });
+            app.UseSwaggerConfiguration();
 
             app.UseHttpsRedirection();
 
