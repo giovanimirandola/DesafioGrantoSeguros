@@ -18,21 +18,18 @@ namespace DesafioGrantoSeguros.Application.Controllers
             _vendedorService = vendedorService;
         }
 
-        // GET: api/<VendedorController>
         [HttpGet]
         public async Task<IActionResult> Get()
         {
             return Ok(await _vendedorService.GetVendedoresAsync());
         }
 
-        // GET api/<VendedorController>/5
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
             return Ok(await _vendedorService.GetVendedorAsync(id));
         }
 
-        // POST api/<VendedorController>
         [HttpPost]
         public async Task<IActionResult> Post(Vendedor vendedor)
         {
@@ -40,24 +37,5 @@ namespace DesafioGrantoSeguros.Application.Controllers
             return CreatedAtAction(nameof(Get), new { id = vendedor.Id }, vendedorInserido);
         }
 
-        // PUT api/<VendedorController>/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Put(Vendedor vendedor)
-        {
-            var vendedorAtualizado = await _vendedorService.UpdateVendedorAsync(vendedor);
-
-            if (vendedorAtualizado == null)
-                return NotFound();
-
-            return Ok(vendedorAtualizado);
-        }
-
-        // DELETE api/<VendedorController>/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
-        {
-            await _vendedorService.DeleteVendedorAsync(id);
-            return NoContent();
-        }
     }
 }

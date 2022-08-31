@@ -33,29 +33,5 @@ namespace DesafioGrantoSeguros.Infrastructure.DataAccess.Repositories
             return vendedor;
         }
 
-        public async Task<Vendedor> UpdateVendedorAsync(Vendedor vendedor)
-        {
-            var vendedorDB = await _context.Vendedores.FindAsync(vendedor.Id);
-
-            if (vendedorDB == null)
-                return null;
-
-            _context.Entry(vendedorDB).CurrentValues.SetValues(vendedor);
-
-            _context.Vendedores.Update(vendedorDB);
-            await _context.SaveChangesAsync();
-
-            return vendedorDB;
-        }
-
-        public async Task DeleteVendedorAsync(int id)
-        {
-            var vendedor = await _context.Vendedores.FindAsync(id);
-
-            _context.Vendedores.Remove(vendedor);
-            await _context.SaveChangesAsync();
-
-        }
-
     }
 }
