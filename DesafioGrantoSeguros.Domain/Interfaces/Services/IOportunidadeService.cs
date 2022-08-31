@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesafioGrantoSeguros.Domain.Interfaces.Repositories
+namespace DesafioGrantoSeguros.Domain.Interfaces.Services
 {
-    public interface IOportunidadeRepository
+    public interface IOportunidadeService
     {
         Task<Oportunidade> GetOportunidadeAsync(int id);
         Task<IEnumerable<Oportunidade>> GetOportunidadesAsync();

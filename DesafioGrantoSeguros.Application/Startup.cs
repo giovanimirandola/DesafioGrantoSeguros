@@ -32,6 +32,8 @@ namespace DesafioGrantoSeguros.Application
 
             services.AddScoped<IVendedorRepository, VendedorRepository>();
             services.AddScoped<IVendedorService, VendedorService>();
+            services.AddScoped<IOportunidadeRepository, OportunidadeRepository>();
+            services.AddScoped<IOportunidadeService, OportunidadeService>();
 
             services.AddSwaggerGen(c =>
             {
