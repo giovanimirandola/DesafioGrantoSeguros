@@ -2,8 +2,11 @@ using DesafioGrantoSeguros.Application.Configuration;
 using DesafioGrantoSeguros.Domain.Interfaces.Repositories;
 using DesafioGrantoSeguros.Domain.Interfaces.Services;
 using DesafioGrantoSeguros.Domain.Services;
+using DesafioGrantoSeguros.Domain.Validator;
 using DesafioGrantoSeguros.Infrastructure.DataAccess.Context;
 using DesafioGrantoSeguros.Infrastructure.DataAccess.Repositories;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +14,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using System.Reflection;
 
 namespace DesafioGrantoSeguros.Application
 {
@@ -28,6 +32,8 @@ namespace DesafioGrantoSeguros.Application
         {
 
             services.AddControllers();
+
+            services.AddFluentValidationConfiguration();
 
             services.AddDbContext<DesafioContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
 
