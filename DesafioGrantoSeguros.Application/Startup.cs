@@ -1,3 +1,4 @@
+using DesafioGrantoSeguros.Application.Configuration;
 using DesafioGrantoSeguros.Domain.Interfaces.Repositories;
 using DesafioGrantoSeguros.Domain.Interfaces.Services;
 using DesafioGrantoSeguros.Domain.Services;
@@ -30,10 +31,7 @@ namespace DesafioGrantoSeguros.Application
 
             services.AddDbContext<DesafioContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
 
-            services.AddScoped<IVendedorRepository, VendedorRepository>();
-            services.AddScoped<IVendedorService, VendedorService>();
-            services.AddScoped<IOportunidadeRepository, OportunidadeRepository>();
-            services.AddScoped<IOportunidadeService, OportunidadeService>();
+            services.AddDependecyInjectionConfiguration();
 
             services.AddSwaggerGen(c =>
             {
