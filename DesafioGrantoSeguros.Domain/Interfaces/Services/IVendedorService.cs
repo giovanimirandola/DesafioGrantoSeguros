@@ -9,7 +9,10 @@ namespace DesafioGrantoSeguros.Domain.Interfaces.Services
 {
     public interface IVendedorService
     {
+        Task DeleteVendedorAsync(int id);
         Task<Vendedor> GetVendedorAsync(int id);
         Task<IEnumerable<Vendedor>> GetVendedoresAsync();
+        Task<Vendedor> InsertVendedorAsync(Vendedor vendedor);
+        Task<Vendedor> UpdateVendedorAsync(Vendedor vendedor);
     }
 }

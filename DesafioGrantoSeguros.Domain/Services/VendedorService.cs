@@ -13,6 +13,11 @@ namespace DesafioGrantoSeguros.Domain.Services
             _vendedorRepository = vendedorRepository;
         }
 
+        public async Task DeleteVendedorAsync(int id)
+        {
+            await _vendedorRepository.DeleteVendedorAsync(id);
+        }
+
         public async Task<Vendedor> GetVendedorAsync(int id)
         {
             return await _vendedorRepository.GetVendedorAsync(id);
@@ -21,6 +26,16 @@ namespace DesafioGrantoSeguros.Domain.Services
         public async Task<IEnumerable<Vendedor>> GetVendedoresAsync()
         {
             return await _vendedorRepository.GetVendedoresAsync();
+        }
+
+        public async Task<Vendedor> InsertVendedorAsync(Vendedor vendedor)
+        {
+            return await _vendedorRepository.InsertVendedorAsync(vendedor);
+        }
+
+        public async Task<Vendedor> UpdateVendedorAsync(Vendedor vendedor)
+        {
+            return await _vendedorRepository.UpdateVendedorAsync(vendedor);
         }
     }
 }

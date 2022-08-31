@@ -1,7 +1,6 @@
 ﻿using DesafioGrantoSeguros.Domain.Entities;
 using DesafioGrantoSeguros.Domain.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -35,20 +34,30 @@ namespace DesafioGrantoSeguros.Application.Controllers
 
         // POST api/<VendedorController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<IActionResult> Post(Vendedor vendedor)
         {
+            var vendedorInserido = await _vendedorService.InsertVendedorAsync(vendedor);
+            return CreatedAtAction(nameof(Get), new { id = vendedor.Id }, vendedorInserido);
         }
 
         // PUT api/<VendedorController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<IActionResult> Put(Vendedor vendedor)
         {
+            var vendedorAtualizado = await _vendedorService.UpdateVendedorAsync(vendedor);
+
+            if (vendedorAtualizado == null)
+                return NotFound();
+
+            return Ok(vendedorAtualizado);
         }
 
         // DELETE api/<VendedorController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
+            await _vendedorService.DeleteVendedorAsync(id);
+            return NoContent();
         }
     }
 }
