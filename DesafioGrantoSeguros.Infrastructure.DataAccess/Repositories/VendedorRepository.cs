@@ -24,7 +24,6 @@ namespace DesafioGrantoSeguros.Infrastructure.DataAccess.Repositories
             return await _context.Vendedores.FirstOrDefaultAsync(v => v.Id == id);
         }
 
-
         public async Task<Vendedor> InsertVendedorAsync(Vendedor vendedor)
         {
             await _context.Vendedores.AddAsync(vendedor);
@@ -33,5 +32,9 @@ namespace DesafioGrantoSeguros.Infrastructure.DataAccess.Repositories
             return vendedor;
         }
 
+        public IEnumerable<Vendedor> GetVendedoresByRegiao(int regiao)
+        {
+            return _context.Vendedores.Where(v => (int) v.Regiao == regiao).ToList();
+        }
     }
 }

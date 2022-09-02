@@ -1,6 +1,7 @@
 ﻿using DesafioGrantoSeguros.Domain.Entities;
 using DesafioGrantoSeguros.Domain.Interfaces.Repositories;
 using DesafioGrantoSeguros.Domain.Interfaces.Services;
+using DesafioGrantoSeguros.Domain.Validator;
 
 namespace DesafioGrantoSeguros.Domain.Services
 {
@@ -28,5 +29,16 @@ namespace DesafioGrantoSeguros.Domain.Services
             return await _vendedorRepository.InsertVendedorAsync(vendedor);
         }
 
+        public IEnumerable<Vendedor> GetVendedorByRegiao(int regiao)
+        {
+            return _vendedorRepository.GetVendedoresByRegiao(regiao);
+        }
+
+        public int Roleta(int regiao)
+        {
+            var vendedor = GetVendedorByRegiao(regiao);
+
+            return 1;
+        }
     }
 }

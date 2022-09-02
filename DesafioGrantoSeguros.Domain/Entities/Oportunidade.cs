@@ -12,7 +12,8 @@ namespace DesafioGrantoSeguros.Domain.Entities
         public string CNPJ { get; set; }
         public string Nome { get; set; }
         public float ValorMonetario { get; set; }
+        public string RazaoSocial { get; set; }
+        public string Descricao { get; set; }
         public int VendedorId { get; set; }
-        public Vendedor Vendedor { get; set; }
     }
 }

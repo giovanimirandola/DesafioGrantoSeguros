@@ -9,6 +9,7 @@ namespace DesafioGrantoSeguros.Domain.Interfaces.Services
 {
     public interface IOportunidadeService
     {
+        Oportunidade GetAPI(Oportunidade oportunidade);
         Task<Oportunidade> GetOportunidadeAsync(int id);
         Task<IEnumerable<Oportunidade>> GetOportunidadesAsync();
         Task<Oportunidade> InsertOportunidadeAsync(Oportunidade oportunidade);

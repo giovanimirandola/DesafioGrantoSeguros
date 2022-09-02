@@ -33,7 +33,10 @@ namespace DesafioGrantoSeguros.Application.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(Oportunidade oportunidade)
         {
+            oportunidade = _oportunidadeService.GetAPI(oportunidade);
+
             var oportunidadeInserida = await _oportunidadeService.InsertOportunidadeAsync(oportunidade);
+
             return CreatedAtAction(nameof(Get), new { id = oportunidade.Id }, oportunidadeInserida);
         }
     }

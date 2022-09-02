@@ -12,10 +12,30 @@ namespace DesafioGrantoSeguros.Domain.Services
     public class OportunidadeService : IOportunidadeService
     {
         private readonly IOportunidadeRepository _oportunidadeRepository;
+        private readonly IHttpRepository _httpRepository;
+        private readonly IVendedorService _vendedorService;
 
-        public OportunidadeService(IOportunidadeRepository oportunidadeRepository)
+        private string baseUrl = "https://publica.cnpj.ws/cnpj/";
+
+        public OportunidadeService(IOportunidadeRepository oportunidadeRepository, IHttpRepository httpRepository, IVendedorService vendedorService)
         {
             _oportunidadeRepository = oportunidadeRepository;
+            _httpRepository = httpRepository;
+            _vendedorService = vendedorService;
+        }
+
+        public Oportunidade GetAPI(Oportunidade oportunidade)
+        {
+            var response = _httpRepository.GetResponse(oportunidade);
+
+            if (response != null)
+            {
+                oportunidade.RazaoSocial = response.razao_social;
+                oportunidade.Descricao = response.estabelecimento.atividade_principal.descricao;
+                oportunidade.VendedorId = _vendedorService.Roleta(response.estabelecimento.estado.ibge_id);
+            }
+
+            return null;
         }
 
         public Task<Oportunidade> GetOportunidadeAsync(int id)

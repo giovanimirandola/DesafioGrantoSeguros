@@ -15,7 +15,6 @@ namespace DesafioGrantoSeguros.Application.Configuration
 
             services.AddScoped<IOportunidadeRepository, OportunidadeRepository>();
             services.AddScoped<IOportunidadeService, OportunidadeService>();
-
         }
     }
 }
